@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmrcceyvff2ec"]
+
+[ext_resource type="PackedScene" uid="uid://b86p8yniy2eru" path="res://ennemies/BaseEnnemy.tscn" id="1_jhb5t"]
+[ext_resource type="Script" uid="uid://uicjwp2j4rsl" path="res://ennemies/crab.gd" id="2_vumr3"]
+[ext_resource type="Texture2D" uid="uid://cpvqnn7jbbog6" path="res://assets/SpaceInvaders.png" id="3_bebtn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bebtn"]
+atlas = ExtResource("3_bebtn")
+region = Rect2(3, 4, 11, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koego"]
+atlas = ExtResource("3_bebtn")
+region = Rect2(19, 4, 11, 9)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vumr3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bebtn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koego")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Crab" instance=ExtResource("1_jhb5t")]
+script = ExtResource("2_vumr3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_vumr3")
+autoplay = "default"
+frame_progress = 0.45469776

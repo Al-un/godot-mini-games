@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://dliv5po52ln4s"]
+
+[ext_resource type="PackedScene" uid="uid://bmrcceyvff2ec" path="res://ennemies/crab.tscn" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://bfkc73rwkwn27" path="res://ennemies/octopus.tscn" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://ykdlt1brk08u" path="res://player/spaceship.tscn" id="3_feb5d"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Crab" parent="." instance=ExtResource("1_e2o6t")]
+position = Vector2(80, 200)
+
+[node name="Crab2" parent="." instance=ExtResource("1_e2o6t")]
+position = Vector2(160, 200)
+
+[node name="Crab3" parent="." instance=ExtResource("1_e2o6t")]
+position = Vector2(240, 200)
+
+[node name="Crab4" parent="." instance=ExtResource("1_e2o6t")]
+position = Vector2(320, 200)
+
+[node name="Crab5" parent="." instance=ExtResource("1_e2o6t")]
+position = Vector2(400, 200)
+
+[node name="Crab6" parent="." instance=ExtResource("1_e2o6t")]
+position = Vector2(480, 200)
+
+[node name="Crab7" parent="." instance=ExtResource("1_e2o6t")]
+position = Vector2(80, 260)
+
+[node name="Crab8" parent="." instance=ExtResource("1_e2o6t")]
+position = Vector2(160, 260)
+
+[node name="Crab9" parent="." instance=ExtResource("1_e2o6t")]
+position = Vector2(240, 260)
+
+[node name="Crab10" parent="." instance=ExtResource("1_e2o6t")]
+position = Vector2(320, 260)
+
+[node name="Crab11" parent="." instance=ExtResource("1_e2o6t")]
+position = Vector2(400, 260)
+
+[node name="Crab12" parent="." instance=ExtResource("1_e2o6t")]
+position = Vector2(480, 260)
+
+[node name="Octopus" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(80, 140)
+
+[node name="Octopus2" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(160, 140)
+
+[node name="Octopus3" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(240, 140)
+
+[node name="Octopus4" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(320, 140)
+
+[node name="Octopus5" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(400, 140)
+
+[node name="Octopus6" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(480, 140)
+
+[node name="Octopus7" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(80, 80)
+
+[node name="Octopus8" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(160, 80)
+
+[node name="Octopus9" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(240, 80)
+
+[node name="Octopus10" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(320, 80)
+
+[node name="Octopus11" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(400, 80)
+
+[node name="Octopus12" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(480, 80)
+
+[node name="Spaceship" parent="." instance=ExtResource("3_feb5d")]
+position = Vector2(300, 700)

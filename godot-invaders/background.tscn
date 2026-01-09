@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bug0h68677xf1"]
+
+[ext_resource type="Texture2D" uid="uid://bxhrgmo2r36r5" path="res://assets/SpaceInvaders_Background.png" id="1_oabld"]
+[ext_resource type="Texture2D" uid="uid://cfc1lumc7w8p5" path="res://assets/SpaceInvaders_BackgroundBuildings.png" id="2_xehqc"]
+[ext_resource type="Texture2D" uid="uid://bekridxu3lyo2" path="res://assets/SpaceInvaders_BackgroundFloor.png" id="3_splo0"]
+
+[node name="Background" type="Node2D"]
+
+[node name="Stars" type="TextureRect" parent="."]
+light_mask = 0
+visibility_layer = 3
+offset_right = 600.0
+offset_bottom = 800.0
+texture = ExtResource("1_oabld")
+stretch_mode = 1
+
+[node name="Buildings" type="TextureRect" parent="."]
+light_mask = 0
+visibility_layer = 3
+offset_top = 480.0
+offset_right = 600.0
+offset_bottom = 640.0
+texture = ExtResource("2_xehqc")
+
+[node name="Floor" type="TextureRect" parent="."]
+light_mask = 0
+visibility_layer = 2
+offset_top = 632.0
+offset_right = 600.0
+offset_bottom = 800.0
+texture = ExtResource("3_splo0")

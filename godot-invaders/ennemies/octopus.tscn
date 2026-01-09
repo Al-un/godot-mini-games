@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfkc73rwkwn27"]
+
+[ext_resource type="PackedScene" uid="uid://b86p8yniy2eru" path="res://ennemies/BaseEnnemy.tscn" id="1_bs468"]
+[ext_resource type="Script" uid="uid://e0brxnyy5h2a" path="res://ennemies/octopus.gd" id="2_lx7ih"]
+[ext_resource type="Texture2D" uid="uid://cpvqnn7jbbog6" path="res://assets/SpaceInvaders.png" id="3_ety6x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nj207"]
+atlas = ExtResource("3_ety6x")
+region = Rect2(4, 20, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur3ed"]
+atlas = ExtResource("3_ety6x")
+region = Rect2(20, 20, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_72v16"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nj207")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur3ed")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Octopus" instance=ExtResource("1_bs468")]
+script = ExtResource("2_lx7ih")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_72v16")
+autoplay = "default"

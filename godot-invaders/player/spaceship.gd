@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var bullet_scene: PackedScene
 
-const SPEED = 100.0
+const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 const WIDTH_BUFFER = 0.1
 
