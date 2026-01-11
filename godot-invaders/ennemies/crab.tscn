@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bmrcceyvff2ec"]
 
-[ext_resource type="PackedScene" uid="uid://b86p8yniy2eru" path="res://ennemies/BaseEnnemy.tscn" id="1_jhb5t"]
+[ext_resource type="PackedScene" uid="uid://b86p8yniy2eru" path="res://ennemies/base_ennemy.tscn" id="1_jhb5t"]
 [ext_resource type="Script" uid="uid://uicjwp2j4rsl" path="res://ennemies/crab.gd" id="2_vumr3"]
 [ext_resource type="Texture2D" uid="uid://cpvqnn7jbbog6" path="res://assets/SpaceInvaders.png" id="3_bebtn"]
 

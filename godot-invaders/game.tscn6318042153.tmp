@@ -14,5 +14,3 @@ octopus_scene = ExtResource("2_feb5d")
 
 [node name="Spaceship" parent="." instance=ExtResource("3_feb5d")]
 position = Vector2(300, 700)
-
-[connection signal="dead" from="Spaceship" to="." method="_on_spaceship_dead"]

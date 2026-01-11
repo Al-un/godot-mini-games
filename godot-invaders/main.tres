@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cw5ha4gqmqy7y"]
+
+[ext_resource type="FontFile" uid="uid://bpc0c4qf860kw" path="res://assets/CosmicAlien-V4Ax.ttf" id="1_24q3n"]
+
+[resource]
+default_font = ExtResource("1_24q3n")
+default_font_size = 24

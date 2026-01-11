@@ -6,3 +6,4 @@ func _ready() -> void:
 	super._ready()
 	#max_health = 1
 	#current_health = 1
+	point_on_kill = 20

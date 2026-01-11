@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal dead
+
 @export var bullet_scene: PackedScene
 
 const SPEED = 200.0
@@ -57,5 +59,9 @@ func _physics_process(_delta: float) -> void:
 
 func shoot() -> void:
 	var bullet = bullet_scene.instantiate()
-	bullet.position = position
+	bullet.position = position - Vector2(0, 35)
 	owner.add_child(bullet)
+
+func on_hit() -> void:
+	dead.emit()
+	

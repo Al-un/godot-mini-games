@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://pkxc3js65gy3"]
+
+[ext_resource type="Texture2D" uid="uid://cpvqnn7jbbog6" path="res://assets/SpaceInvaders.png" id="1_6otiy"]
+[ext_resource type="Script" uid="uid://b0bh7bvcr7vn4" path="res://ennemies/ennemy_bullet.gd" id="1_ypcax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypcax"]
+size = Vector2(9, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48uvr"]
+atlas = ExtResource("1_6otiy")
+region = Rect2(38, 21, 3, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15pyq"]
+atlas = ExtResource("1_6otiy")
+region = Rect2(87, 21, 3, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xdoo8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48uvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15pyq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="EnnemyBullet" type="Area2D"]
+script = ExtResource("1_ypcax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ypcax")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_xdoo8")
+autoplay = "default"
+frame_progress = 0.24076085
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-5, -10, 9, 20)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
