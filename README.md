@@ -13,8 +13,12 @@ Learning Godot through some simple mini games
 
 ## Games
 
-_Games are listed in creation order_
+### [Godot Invaders](./godot-invaders/)
 
-### Godot Invaders
+A Space Invader copy to start this serie of mini-games. I discovered
+the basics of 2D games, without physics, creating a player, ennemies,
+bullets shooting at each other with a basic score system.
 
-A Space invader copy
+<div style="text-align: center;">
+    <img src="./godot-invaders/godot-invader_screenshot.png" height="400px" />
+</div>
