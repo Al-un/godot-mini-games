@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ykdlt1brk08u" path="res://player/spaceship.tscn" id="3_feb5d"]
 [ext_resource type="PackedScene" uid="uid://d07ckcch5pd76" path="res://building/building.tscn" id="4_fc0e3"]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" groups=["game"]]
 script = ExtResource("1_7jktm")
 building_scene = ExtResource("4_fc0e3")
 crab_scene = ExtResource("1_e2o6t")

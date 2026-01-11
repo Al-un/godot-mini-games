@@ -8,6 +8,7 @@ const SPEED = 30
 
 # https://github.com/Cofica17/2d_enemy_fire_bullet_at_player/blob/main/enemy/Enemy.gd\
 @onready var player = get_tree().get_first_node_in_group("player")
+@onready var game = get_tree().get_first_node_in_group("game")
 var ennemy_bullet_scene = load("res://ennemies/ennemy_bullet.tscn")
 
 @export var max_health: int
@@ -41,6 +42,9 @@ func _process(delta: float) -> void:
 		position.y += 20
 		direction *= -1
 
+func _physics_process(_delta: float) -> void:
+	move_and_collide(linear_velocity)
+
 func on_hit() -> void:
 	current_health -= 1
 	hit.emit()
@@ -51,10 +55,11 @@ func on_hit() -> void:
 
 func shoot() -> void:
 	var bullet = ennemy_bullet_scene.instantiate()
-	add_child(bullet)
 	bullet.direction = global_position.direction_to(player.global_position)
 	bullet.global_position = global_position
+	
+	game.add_child(bullet)
 
 func _on_shooting_timer_timeout() -> void:
-	if randf() > 0.1:
+	if randf() > 0.75:
 		shoot()

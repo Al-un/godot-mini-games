@@ -21,7 +21,9 @@ var current_level = 1
 var ennemies_levels: Array[Array]
 
 var current_ennemies_killed = 0
+var created_ennemies: Array[BaseEnnemy]
 var created_ennemies_count = 0
+var created_building: Array[Building]
  
 # ==============================================================================
 
@@ -63,8 +65,14 @@ func _generate_ennemies_row(offset_y: int, ennemies_count: int, ennemy_type: Pac
 		ennemy.dead.connect(_on_ennemy_killed)
 		
 		add_child(ennemy)
+		created_ennemies.push_back(ennemy)
 
 func _generate_ennemies_level(level: int) -> void:
+	for active_ennemy in created_ennemies:
+		if active_ennemy != null:
+			active_ennemy.queue_free()
+	
+	created_ennemies = []
 	current_ennemies_killed = 0
 	created_ennemies_count = 0
 	
@@ -87,6 +95,10 @@ func new_game(building_count := 4):
 	next_level.emit(current_level)
 	
 	# --- Generate buildings 
+	
+	for active_building in created_building:
+		if active_building != null:
+			active_building.queue_free()
 	# Float vs Integer: division not support. See
 	# https://github.com/godotengine/godot-proposals/issues/11998
 	var building_step_x = (building_max_x - building_min_x) / building_count
@@ -94,6 +106,7 @@ func new_game(building_count := 4):
 		var building := building_scene.instantiate()
 		building.position = Vector2(building_min_x + (i+0.5)*building_step_x, building_y)
 		add_child(building)
+		created_building.push_back(building)
 		
 func _on_ennemy_killed(point_on_kill: int) -> void:
 	score_update.emit(point_on_kill)
@@ -115,4 +128,10 @@ func _on_ennemy_killed(point_on_kill: int) -> void:
 
 func _on_spaceship_dead() -> void:
 	print("Game Over!")
+	
+	# Nuke the ennemies to avoid spawn kill when restarting
+	for active_ennemy in created_ennemies:
+		if active_ennemy != null:
+			active_ennemy.queue_free()
+	
 	game_over.emit()

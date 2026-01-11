@@ -55,7 +55,12 @@ func _physics_process(_delta: float) -> void:
 	#else:
 		#velocity.x = move_toward(velocity.x, 0, SPEED)
 
+	# https://stackoverflow.com/a/69731270
 	move_and_slide()
+	for index in get_slide_collision_count():
+		var collision := get_slide_collision(index)
+		var body := collision.get_collider()
+		print("Collided with: ", body.name)
 
 func shoot() -> void:
 	var bullet = bullet_scene.instantiate()
@@ -65,3 +70,8 @@ func shoot() -> void:
 func on_hit() -> void:
 	dead.emit()
 	
+
+
+func _on_bullet_detector_area_entered(area: Area2D) -> void:
+	print("Spaceship/BulletDetector: hit by ", area.name)
+	on_hit()

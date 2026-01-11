@@ -1,10 +1,10 @@
 extends Area2D
 
-const SPEED = 4
+const SPEED = 5
 
 var direction = Vector2.ZERO
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	position += direction * SPEED
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:

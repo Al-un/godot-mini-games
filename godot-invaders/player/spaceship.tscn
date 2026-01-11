@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ykdlt1brk08u"]
+[gd_scene load_steps=7 format=3 uid="uid://ykdlt1brk08u"]
 
 [ext_resource type="Script" uid="uid://bh7riplvj0ang" path="res://player/spaceship.gd" id="1_k4amv"]
 [ext_resource type="PackedScene" uid="uid://cggttngbray1c" path="res://player/spaceship_bullet.tscn" id="2_13vxk"]
@@ -11,6 +11,9 @@ size = Vector2(39.5, 40.5)
 atlas = ExtResource("3_unf1b")
 region = Rect2(68, 4, 9, 10)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unf1b"]
+size = Vector2(40, 41)
+
 [node name="Spaceship" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_k4amv")
 bullet_scene = ExtResource("2_13vxk")
@@ -21,3 +24,11 @@ shape = SubResource("RectangleShape2D_qg5q0")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
 texture = SubResource("AtlasTexture_gu8yw")
+
+[node name="BulletDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletDetector"]
+shape = SubResource("RectangleShape2D_unf1b")
+debug_color = Color(0.97810274, 0.14564714, 0.0703375, 0.41960785)
+
+[connection signal="area_entered" from="BulletDetector" to="." method="_on_bullet_detector_area_entered"]
